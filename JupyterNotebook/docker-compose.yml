@@ -1,0 +1,13 @@
+version: "3"
+services:
+ datascience-notebook:
+  build:
+   context: .
+   dockerfile: Dockerfile
+  volumes:
+   - /home/cassiano/Documentos/Docker/JupyterNotebook/work:/home/jovyan/work
+   - /home/cassiano/Documentos/Docker/JupyterNotebook/datasets:/home/jovyan/work/datasets
+   - /home/cassiano/Documentos/Docker/JupyterNotebook/modules:/home/jovyan/work/modules
+  ports:
+   - 8888:8888
+  container_name: datascience-notebook-container
